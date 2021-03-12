@@ -13,20 +13,20 @@ public class PlayerRed : MonoBehaviour
     public KeyCode left;
 
 
-    // Start is called before the first frame update
-    void Start()
+    // Start is called before the first frame update -> initialisation of the scene
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Update is called once per frame -> play the animation
+    private void Update()
     {
         Animator anim = GetComponent<Animator>();
         anim.Play("PlayerRedAnim");
     }
 
-    // Called once per frame and handle physics
+    // Called once per frame and handle physics -> handle movements
     private void FixedUpdate()
     {
         if (Input.GetKey(left))

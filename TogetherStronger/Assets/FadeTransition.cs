@@ -8,7 +8,7 @@ public class FadeTransition : MonoBehaviour
     public Animator anim;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         anim.Play("FadeOut");
     }
@@ -19,7 +19,8 @@ public class FadeTransition : MonoBehaviour
         StartCoroutine(LoadScene(name));
     }
 
-    IEnumerator LoadScene(string name)
+    // Wait two seconds then load the next scene.
+    private IEnumerator LoadScene(string name)
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(name);

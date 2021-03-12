@@ -9,21 +9,15 @@ public class PlayButton : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite unselectedSprite;
     public Sprite overSprite;
-    public Sprite clickedSprite;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-     
-    }
-
-    void OnMouseOver()
+    // Change the sprite to the over sprite and change scene if pressed
+    private void OnMouseOver()
     {
         this.spriteRenderer.sprite = overSprite;
 
@@ -33,7 +27,8 @@ public class PlayButton : MonoBehaviour
         }
     }
 
-    void OnMouseExit()
+    // Change the sprite to the unselected (not hover) sprite
+    private void OnMouseExit()
     {
         this.spriteRenderer.sprite = unselectedSprite;
     }

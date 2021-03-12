@@ -6,12 +6,12 @@ public class BluePressurePlate : MonoBehaviour
 {
     private SpriteRenderer m_spriteRenderer;
     private BoxCollider2D m_box;
-    private Sprite BLUE_PLATE_NON_ACTIVATED;
-    private Sprite BLUE_PLATE_ACTIVATED;
-    private Door m_door;
+    public Sprite BLUE_PLATE_NON_ACTIVATED;
+    public Sprite BLUE_PLATE_ACTIVATED;
+    public Door m_door;
 
     // Start is called before the first frame update (used for initialisation)
-    void Start()
+    private void Start()
     {
         this.m_spriteRenderer = this.GetComponent<SpriteRenderer>();
         this.m_spriteRenderer.sprite = this.BLUE_PLATE_NON_ACTIVATED;
@@ -20,7 +20,7 @@ public class BluePressurePlate : MonoBehaviour
     }
 
     // Change the pressure plate's texture depending on if it is activated or not
-    void setActivated(bool activated)
+    private void setActivated(bool activated)
     {
         if (activated)
         {

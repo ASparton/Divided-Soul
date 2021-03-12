@@ -17,14 +17,14 @@ public class PlayerBlue : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         this.keepUpdating = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    // Update is called once per frame -> play animations
+    private void Update()
     {
         if (keepUpdating)
         {
@@ -38,7 +38,7 @@ public class PlayerBlue : MonoBehaviour
         }
     }
 
-    // Called once per frame and handle physics
+    // Called once per frame and handle physics -> used for moving the player
     private void FixedUpdate()
     {
         if (keepUpdating)
@@ -75,7 +75,8 @@ public class PlayerBlue : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    // Handle collision with the other player
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("PlayerRed"))
         {
