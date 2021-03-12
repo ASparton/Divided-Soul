@@ -80,7 +80,6 @@ public class PlayerBlue : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerRed"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.velocity = new Vector2(0, rb.velocity.y);
             this.keepUpdating = false;
 
